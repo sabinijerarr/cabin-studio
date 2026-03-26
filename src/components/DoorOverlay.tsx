@@ -98,7 +98,7 @@ export default function DoorOverlay({ phase, onComplete }: DoorOverlayProps) {
       <video
         ref={videoRef}
         className="video-fullscreen"
-        src="/videos/door-video.mp4"
+        src="https://github.com/sabinijerarr/cabin-studio/releases/download/v1.0.0/door-video.mp4"
         playsInline
         muted
         preload="auto"

@@ -18,7 +18,7 @@ export default function HeroSection({ onBookClick }: HeroSectionProps) {
           className="absolute inset-0 w-full h-full object-cover object-center"
           aria-hidden="true"
         >
-          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+          <source src="https://github.com/sabinijerarr/cabin-studio/releases/download/v1.0.0/hero-bg.mp4" type="video/mp4" />
         </video>
 
         {/* Gradient overlay */}
