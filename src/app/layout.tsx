@@ -28,6 +28,10 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cabinstudio.com'),
+  icons: {
+    icon: '/icon.png',
+    apple: '/icon.png',
+  },
   title: {
     default: 'Cabin Studio — Recording Studio Chicago',
     template: '%s | Cabin Studio Chicago',

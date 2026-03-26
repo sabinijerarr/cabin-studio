@@ -37,8 +37,8 @@ export default function DoorOverlay({ phase, onComplete }: DoorOverlayProps) {
     video
       .play()
       .then(() => {
-        // Longer dissolve — hero melts into the door scene
-        gsap.to(overlay, { opacity: 1, duration: 0.8, ease: 'power2.inOut' })
+        // Quick dissolve into door scene
+        gsap.to(overlay, { opacity: 1, duration: 0.35, ease: 'power2.inOut' })
       })
       .catch(() => {
         // Autoplay blocked — skip straight to booking
@@ -61,7 +61,7 @@ export default function DoorOverlay({ phase, onComplete }: DoorOverlayProps) {
       // Zoom INTO the actual video — slow start, then accelerates through the door
       .to(video, {
         scale: 9,
-        duration: 1.2,
+        duration: 0.7,
         ease: 'power3.in',
         transformOrigin: '50% 42%',
       })
@@ -69,19 +69,19 @@ export default function DoorOverlay({ phase, onComplete }: DoorOverlayProps) {
         overlay,
         {
           backgroundColor: '#1A1610',
-          duration: 0.6,
+          duration: 0.35,
           ease: 'power2.in',
         },
-        '-=0.7',
+        '-=0.45',
       )
-      // Hold a beat, then navigate
+      // Navigate immediately
       .call(() => {
         const lenis = (window as unknown as { __lenis?: Lenis }).__lenis
         lenis?.start()
         document.body.style.overflow = ''
         onComplete?.()
         router.push('/booking')
-      }, undefined, '+=0.25')
+      })
   }, [router, onComplete])
 
   useEffect(() => {
