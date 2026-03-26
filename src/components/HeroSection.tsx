@@ -1,35 +1,38 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-
-const DESKTOP_VIDEO = 'https://github.com/sabinijerarr/cabin-studio/releases/download/v1.0.0/hero-bg.mp4'
-const MOBILE_VIDEO = 'https://github.com/sabinijerarr/cabin-studio/releases/download/v1.0.0/mobile-hero.mp4'
-
 interface HeroSectionProps {
   onBookClick: () => void
 }
 
 export default function HeroSection({ onBookClick }: HeroSectionProps) {
-  const [videoSrc, setVideoSrc] = useState(DESKTOP_VIDEO)
-
-  useEffect(() => {
-    setVideoSrc(window.innerWidth < 768 ? MOBILE_VIDEO : DESKTOP_VIDEO)
-  }, [])
-
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <div className="absolute inset-0">
+        {/* Desktop video — hidden on phones */}
         <video
-          key={videoSrc}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          src={videoSrc}
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
           aria-hidden="true"
-        />
+        >
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
+
+        {/* Mobile video (9:16) — hidden on desktop */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover object-center md:hidden"
+          aria-hidden="true"
+        >
+          <source src="/videos/mobile-hero.mp4" type="video/mp4" />
+        </video>
 
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-warm-black/40 via-warm-black/10 to-warm-black/85" />

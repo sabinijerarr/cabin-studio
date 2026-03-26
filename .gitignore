@@ -13,8 +13,7 @@ out/
 .env.test.local
 .env.production.local
 
-# Large media — host these on a CDN in production
-public/videos/*.mp4
+# Large media
 public/videos/*.webm
 public/videos/*.mov
 
