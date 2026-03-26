@@ -61,19 +61,18 @@ export default function DoorOverlay({ phase, onComplete }: DoorOverlayProps) {
       // Zoom INTO the actual video — slow start, then accelerates through the door
       .to(video, {
         scale: 9,
-        duration: 2.2,
-        ease: 'power2.in',          // gentler start than power3 — feels more natural
+        duration: 1.2,
+        ease: 'power3.in',
         transformOrigin: '50% 42%',
       })
-      // Black creeps in earlier so the cut to /booking is completely hidden
       .to(
         overlay,
         {
           backgroundColor: '#1A1610',
-          duration: 1.1,
-          ease: 'power1.inOut',     // very gradual, not sudden
+          duration: 0.6,
+          ease: 'power2.in',
         },
-        '-=1.4',
+        '-=0.7',
       )
       // Hold a beat, then navigate
       .call(() => {
