@@ -28,10 +28,7 @@ export default function HeroSection({ onBookClick }: HeroSectionProps) {
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-end pb-20 text-center px-4">
         <div className="mb-6">
-          <p className="font-jetbrains text-xs tracking-[0.4em] text-amber uppercase mb-3">
-            Chicago, Illinois · 345 N Loomis St
-          </p>
-          <h1 className="font-cinzel text-5xl sm:text-7xl md:text-8xl font-semibold text-cream leading-none tracking-wide">
+<h1 className="font-cinzel text-5xl sm:text-7xl md:text-8xl font-semibold text-cream leading-none tracking-wide">
             Cabin Studio
           </h1>
           <p className="font-cormorant text-xl sm:text-2xl text-cream/70 italic mt-3 tracking-wide">
