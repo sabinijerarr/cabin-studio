@@ -10,6 +10,7 @@ import GearSection from '@/components/GearSection'
 import GallerySection from '@/components/GallerySection'
 import ClienteleSection from '@/components/ClienteleSection'
 import ContactSection from '@/components/ContactSection'
+import MembershipSection from '@/components/MembershipSection'
 
 export default function HomePage() {
   const [doorPhase, setDoorPhase] = useState<'idle' | 'playing'>('idle')
@@ -33,6 +34,7 @@ export default function HomePage() {
       <ServicesSection />
       <GearSection />
       <GallerySection />
+      <MembershipSection />
       <ClienteleSection />
       <ContactSection />
     </>
